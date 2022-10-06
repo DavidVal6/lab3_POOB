@@ -56,6 +56,13 @@ public class AManufacturing{
     
    
     public void ticTac(){
-        
-    }
+        for(int i = 0; i < lattice.length;++i){
+            for(int j = 0 ; j < lattice[i].length;++j){
+                if(lattice[i][j] != null){
+                    lattice[i][j].decide();
+                    lattice[i][j].change();
+                }
+            }
+        }
+    } 
 }
