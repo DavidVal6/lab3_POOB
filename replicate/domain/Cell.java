@@ -28,6 +28,8 @@ public class Cell extends Artefact implements Thing{
         aManufactuing.setThing(row,column,(Thing)this);    
         color=Color.black;
     }
+    
+
     /**Returns the row
     @return 
      */
@@ -65,8 +67,9 @@ public class Cell extends Artefact implements Thing{
     }
     
     public char getState(){
-        return(state);
-    }   
+        return state;
+    }
+   
     public int neighborsActive(){
         return aManufactuing.neighborsActive(row,column);
     }

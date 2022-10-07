@@ -6,9 +6,11 @@ import java.util.*;
 public class AManufacturing{
     static private int SIZE=50;
     private Thing[][] lattice;
+    private ArrayList<int[]> newKriptonites;
     
     public AManufacturing() {
         lattice=new Thing[SIZE][SIZE];
+        newKriptonites = new ArrayList();
         for (int r=0;r<SIZE;r++){
             for (int c=0;c<SIZE;c++){
                 lattice[r][c]=null;
@@ -32,17 +34,15 @@ public class AManufacturing{
     public void someThings(){
         Cell simba = new Cell(this,1,1,true);
         Cell dala = new Cell(this,2,2,true);
+        Kriptonita uone = new Kriptonita(this, 0,0,true);
+        Kriptonita two = new Kriptonita(this, 49,0,true);
+        Kriptonita three = new Kriptonita(this, 0,49,true);
+        Kriptonita four = new Kriptonita(this, 49,49,true);
         Mimo mufasa = new Mimo(this,2,3,true);
         Mimo scar = new Mimo(this,2,4,true);
         Mimo rafiki = new Mimo(this,2,5,true);
     }
-    /**+
-     * This method is the getter for lattice matrix
-     * @return
-     */
-    public Thing[][] getLattice(){
-        return lattice;
-    }
+    
     /**
      * This method search if i have activecell as a neighbor in some exact point in the table(matrix)
      * @param r
@@ -83,12 +83,23 @@ public class AManufacturing{
     public void ticTac(){
         for(int i = 0; i < lattice.length;++i){
             for(int j = 0 ; j < lattice[i].length;++j){
-                if(lattice[i][j] != null){
+                if(!isEmpty(i,j)){
                     lattice[i][j].decide();
                     lattice[i][j].change();
                 }
             }
         }
+        reproduce();
     }
     
+    public void reproduce() {
+        for(int i = 0 ; i < newKriptonites.size(); i++){
+            new Kriptonita(this,newKriptonites.get(i)[0],newKriptonites.get(i)[1],true);
+        }
+        newKriptonites.clear();
+    }
+    
+    public void addPositions(int[] pair) {
+        newKriptonites.add(pair);
+    }
 }

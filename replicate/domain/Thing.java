@@ -23,7 +23,5 @@ public interface Thing{
   default boolean isActive(){
       return false;
   }
-
   char getState();
-  
 }
