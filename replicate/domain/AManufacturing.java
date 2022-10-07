@@ -41,6 +41,8 @@ public class AManufacturing{
         Mimo mufasa = new Mimo(this,2,3,true);
         Mimo scar = new Mimo(this,2,4,true);
         Mimo rafiki = new Mimo(this,2,5,true);
+        //Ciclo 4
+        crazyCell asmodeo = new crazyCell(this,25,25,true);
     }
 
     /**
@@ -101,5 +103,9 @@ public class AManufacturing{
 
     public void addPositions(int[] pair) {
         newKriptonites.add(pair);
+    }
+    
+    public Thing[][] getLattice(){
+        return lattice;
     }
 }

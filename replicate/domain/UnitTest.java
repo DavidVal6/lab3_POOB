@@ -15,30 +15,37 @@ import org.junit.jupiter.api.Test;
  */
 public class UnitTest
 {
-    /**
-     * Default constructor for test class UnitTest
-     */
-    public UnitTest()
-    {
+    @Test
+    public void shouldCreateANewCell(){
+        AManufacturing am1 = new AManufacturing();
+        boolean flag = false;
+        Thing[][] lattice = am1.getLattice(); 
+        for(Thing[] b :lattice){
+            for(Thing a : b){
+                if(b != null){
+                    flag = true;
+                }
+            }
+        }
+        assertTrue(flag);
     }
-
-    /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
-     */
-    @BeforeEach
-    public void setUp()
-    {
+    @Test
+    public void shouldAppearAndDessapear(){
+        AManufacturing am1 = new AManufacturing();
+        am1.ticTac();
+        am1.ticTac();
+        am1.ticTac();
+        am1.ticTac();
+        assertTrue(am1.getThing(2,2).isActive());
     }
-
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @AfterEach
-    public void tearDown()
-    {
+    @Test
+    public void shouldStayAlive(){
+        AManufacturing am1 = new AManufacturing();
+        am1.ticTac();
+        am1.ticTac();
+        am1.ticTac();
+        am1.ticTac();
+        assertTrue(am1.getThing(2,3).isActive());
     }
+    
 }
