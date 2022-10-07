@@ -15,30 +15,19 @@ import org.junit.jupiter.api.Test;
  */
 public class UnitTest
 {
-    /**
-     * Default constructor for test class UnitTest
-     */
-    public UnitTest()
-    {
-    }
+    @Test
+    public void shouldMakeANewAmanufacturing(){
+        AManufacturing a1  = new AManufacturing();
+        boolean flag = false;
+        Thing[][] lat = a1.getLattice();
+        for(Thing[] b : lat){
+            for(Thing a : b){
+                if(a != null){
+                    flag = true;
+                }
+            }
+        }
+        assertTrue(flag);
 
-    /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
-     */
-    @BeforeEach
-    public void setUp()
-    {
-    }
-
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @AfterEach
-    public void tearDown()
-    {
     }
 }

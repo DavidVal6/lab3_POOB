@@ -35,6 +35,13 @@ public class AManufacturing{
         setThing(1,1,simba);
         setThing(2,2,dala);
     }
+    /**+
+     * This method is the getter for lattice matrix
+     * @return
+     */
+    public Thing[][] getLattice(){
+        return lattice;
+    }
     /**
      * This method search if i have activecell as a neighbor in some exact point in the table(matrix)
      * @param r
@@ -61,7 +68,7 @@ public class AManufacturing{
         return (inLatice(r,c) && lattice[r][c]==null);
     }  
     /**
-     * 	This method should confirm if the cells that we wanna check is inside the geme table or not 
+     *     This method should confirm if the cells that we wanna check is inside the geme table or not 
      * @param r
      * @param c
      * @return
