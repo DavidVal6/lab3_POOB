@@ -7,7 +7,7 @@ public class AManufacturing{
     static private int SIZE=50;
     private Thing[][] lattice;
     private ArrayList<int[]> newKriptonites;
-    
+
     public AManufacturing() {
         lattice=new Thing[SIZE][SIZE];
         newKriptonites = new ArrayList();
@@ -30,7 +30,7 @@ public class AManufacturing{
     public void setThing(int r, int c, Thing e){
         lattice[r][c]=e;
     }
-    
+
     public void someThings(){
         Cell simba = new Cell(this,1,1,true);
         Cell dala = new Cell(this,2,2,true);
@@ -42,7 +42,7 @@ public class AManufacturing{
         Mimo scar = new Mimo(this,2,4,true);
         Mimo rafiki = new Mimo(this,2,5,true);
     }
-    
+
     /**
      * This method search if i have activecell as a neighbor in some exact point in the table(matrix)
      * @param r
@@ -53,7 +53,7 @@ public class AManufacturing{
         int num=0;
         for(int dr=-1; dr<2;dr++){
             for (int dc=-1; dc<2;dc++){
-                if ((dr!=0 || dc!=0) && inLatice(r+dr,c+dc) && 
+                if ((dr!=0 || dc!=0) && inLatice(r+dr,c+dc) &&
                     (lattice[r+dr][c+dc]!=null) &&  (lattice[r+dr][c+dc].isActive())) num++;
             }
         }
@@ -67,13 +67,13 @@ public class AManufacturing{
      */
     public boolean isEmpty(int r, int c){
         return (inLatice(r,c) && lattice[r][c]==null);
-    }  
+    }
     /**
-     *     This method should confirm if the cells that we wanna check is inside the geme table or not 
+     *     This method should confirm if the cells that we wanna check is inside the geme table or not
      * @param r
      * @param c
      * @return
-     */ 
+     */
     private boolean inLatice(int r, int c){
         return ((0<=r) && (r<SIZE) && (0<=c) && (c<SIZE));
     }
@@ -91,14 +91,14 @@ public class AManufacturing{
         }
         reproduce();
     }
-    
+
     public void reproduce() {
         for(int i = 0 ; i < newKriptonites.size(); i++){
             new Kriptonita(this,newKriptonites.get(i)[0],newKriptonites.get(i)[1],true);
         }
         newKriptonites.clear();
     }
-    
+
     public void addPositions(int[] pair) {
         newKriptonites.add(pair);
     }

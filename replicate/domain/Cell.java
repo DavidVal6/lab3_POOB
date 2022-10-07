@@ -14,9 +14,9 @@ public class Cell extends Artefact implements Thing{
 
 
     /**Create a new cell (<b>row,column</b>) in the aManufactuing <b>ac</b>..
-     * @param am 
-     * @param row 
-     * @param column 
+     * @param am
+     * @param row
+     * @param column
      * @param active
      */
     public Cell(AManufacturing am,int row, int column, boolean active){
@@ -25,28 +25,28 @@ public class Cell extends Artefact implements Thing{
         this.column=column;
         state=(active ? Artefact.ACTIVE: Artefact.INACTIVE);
         nextState=(active ? Artefact.ACTIVE: Artefact.INACTIVE);
-        aManufactuing.setThing(row,column,(Thing)this);    
+        aManufactuing.setThing(row,column,(Thing)this);
         color=Color.black;
     }
-    
+
 
     /**Returns the row
-    @return 
+    @return
      */
     public final int getRow(){
         return row;
     }
 
     /**Returns tha column
-    @return 
+    @return
      */
     public final int getColumn(){
         return column;
     }
 
-    
+
     /**Returns the color
-    @return 
+    @return
      */
     public final Color getColor(){
         return color;
@@ -65,17 +65,17 @@ public class Cell extends Artefact implements Thing{
         step();
         state=nextState;
     }
-    
+
     public char getState(){
         return state;
     }
-   
+
     public int neighborsActive(){
         return aManufactuing.neighborsActive(row,column);
     }
-    
+
     public boolean neighborIsEmpty(int dr,int dc){
         return aManufactuing.isEmpty(row+dr,column+dc);
-    }    
+    }
 
 }

@@ -8,18 +8,18 @@ public interface Thing{
 
 
   void decide();
-   
+
   default void change(){
   };
-  
+
   default int shape(){
       return SQUARE;
   }
-  
+
   default Color getColor(){
       return Color.red;
   };
-  
+
   default boolean isActive(){
       return false;
   }
