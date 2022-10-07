@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Kriptonita
+comment0.text=\r\n\ Kriptonita\ is\ an\ artefact\ that\ implements\ Thing\ with\ the\ follow\ rules\:\r\n\ -\ Is\ round\ \r\n\ -\ Is\ green\r\n\ -\ Only\ is\ active\ if\ has\ neighbours\r\n\ -\ Reproduces\ new\ Kriptonites\ in\ the\ emptys\ neighbours\r\n\ \r\n\ @author\ OlayaValencia\ \r\n\ @version\ 07/10/2022\r\n
+comment1.params=am\ row\ column\ active
+comment1.target=Kriptonita(AManufacturing,\ int,\ int,\ boolean)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Kriptonita\r\n
+comment2.params=
+comment2.target=int\ getRow()
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment3.params=
+comment3.target=int\ getColumn()
+comment3.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment4.params=
+comment4.target=java.awt.Color\ getColor()
+comment5.params=
+comment5.target=void\ change()
+comment6.params=
+comment6.target=void\ decide()
+comment7.params=
+comment7.target=int\ neighborsActive()
+comment8.params=dr\ dc
+comment8.target=boolean\ neighborIsEmpty(int,\ int)
+comment9.params=
+comment9.target=int\ shape()
+numComments=10
