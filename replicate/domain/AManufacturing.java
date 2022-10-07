@@ -32,8 +32,9 @@ public class AManufacturing{
     public void someThings(){
         Cell simba = new Cell(this,1,1,true);
         Cell dala = new Cell(this,2,2,true);
-        setThing(1,1,simba);
-        setThing(2,2,dala);
+        Mimo mufasa = new Mimo(this,2,3,true);
+        Mimo scar = new Mimo(this,2,4,true);
+        Mimo rafiki = new Mimo(this,2,5,true);
     }
     /**+
      * This method is the getter for lattice matrix
