@@ -28,6 +28,16 @@ public class UnitTest
             }
         }
         assertTrue(flag);
-
+    }
+    
+    @Test
+    public void shouldMakeThreetTicTacs(){
+        AManufacturing a1  = new AManufacturing();
+        a1.ticTac();
+        a1.ticTac();
+        a1.ticTac();
+        a1.ticTac();
+        Thing[][] lat = a1.getLattice();
+        assertTrue(lat[1][1].isActive());
     }
 }
