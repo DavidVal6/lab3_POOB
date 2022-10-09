@@ -7,10 +7,12 @@ public class AManufacturing{
     static private int SIZE=50;
     private Thing[][] lattice;
     private ArrayList<int[]> newKriptonites;
-
+    private ArrayList<int[]> newPredators;
+    
     public AManufacturing() {
         lattice=new Thing[SIZE][SIZE];
         newKriptonites = new ArrayList();
+        newPredators = new ArrayList();
         for (int r=0;r<SIZE;r++){
             for (int c=0;c<SIZE;c++){
                 lattice[r][c]=null;
@@ -42,9 +44,13 @@ public class AManufacturing{
         Mimo scar = new Mimo(this,2,4,true);
         Mimo rafiki = new Mimo(this,2,5,true);
 
-        //Ciclo 4
-        crazyCell asmodeo = new crazyCell(this,25,25,true);
-        crazyCell mateo = new crazyCell(this,26,26,true);
+        // Ciclo 4
+        // crazyCell asmodeo = new crazyCell(this,25,25,true);
+        // crazyCell mateo = new crazyCell(this,26,26,true);
+        
+        // Ciclo 5
+        Predator predAlien = new Predator(this, 3,3, true);
+        Predator feralPredator = new Predator(this, 25, 25, true);
     }
 
     /**
@@ -73,6 +79,15 @@ public class AManufacturing{
         return (inLatice(r,c) && lattice[r][c]==null);
     }
     /**
+     * This method should help us to see if in a exact point in the table(matrix) we got a cell or not
+     * @param r
+     * @param c
+     * @return
+     */
+    public boolean isOccupied(int r, int c){
+        return (inLatice(r,c) && lattice[r][c]!=null);
+    }
+    /**
      *     This method should confirm if the cells that we wanna check is inside the geme table or not
      * @param r
      * @param c
@@ -94,6 +109,7 @@ public class AManufacturing{
             }
         }
         reproduce();
+        eat();
     }
 
     public void reproduce() {
@@ -102,9 +118,20 @@ public class AManufacturing{
         }
         newKriptonites.clear();
     }
+    
+    public void eat() {
+        for(int i = 0 ; i < newPredators.size(); i++){
+            new Predator(this,newPredators.get(i)[0],newPredators.get(i)[1],true);
+        }
+        newPredators.clear();
+    }
 
-    public void addPositions(int[] pair) {
-        newKriptonites.add(pair);
+    public void addPositions(int[] pair, int w) {
+        if(w == 0){
+            newKriptonites.add(pair);    
+        } else if(w == 1) {
+            newPredators.add(pair);
+        }
     }
     
     public Thing[][] getLattice(){

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Mimo
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Mimo\ here.\r\n\ \r\n\ @author\ (Mateo\ Olaya\ -\ David\ Valencia)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=am\ row\ column\ active
+comment1.target=Mimo(AManufacturing,\ int,\ int,\ boolean)
+comment2.params=
+comment2.target=void\ fuller()
+comment3.params=
+comment3.target=void\ decide()
+comment4.params=
+comment4.target=int\ neighborsActive()
+comment5.params=dr\ dc
+comment5.target=boolean\ neighborIsEmpty(int,\ int)
+numComments=6
