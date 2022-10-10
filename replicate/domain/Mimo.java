@@ -4,10 +4,10 @@ import java.util.HashMap;
 
 
 /**
- * Write a description of class Mimo here.
+ * A Mimo Cell copy the state of his neighbours in a clock sequence
  * 
  * @author (Mateo Olaya - David Valencia) 
- * @version (a version number or a date)
+ * @version 1.0
  */
 public class Mimo extends Cell
 {
@@ -16,6 +16,13 @@ public class Mimo extends Cell
     private int row,column;
     private int cicles;
     private HashMap<Integer,int[]> positions;
+    
+    /**Create a new Mimo cell (<b>row,column</b>) in the aManufactuing <b>ac</b>..
+     * @param am
+     * @param row
+     * @param column
+     * @param active
+     */
     public Mimo(AManufacturing am,int row, int column, boolean active)
     {
         super(am,row,column,active);
@@ -27,6 +34,10 @@ public class Mimo extends Cell
         cicles = 0;
         fuller();
     }
+    
+    /**
+     * This method inititalize the positions of the clock sequence in a HashMap
+     */
     private void fuller(){
         int touple[] = {-1,0};
         positions.put(0,touple);
@@ -45,6 +56,10 @@ public class Mimo extends Cell
         int touple7[] = {-1,-1};
         positions.put(7,touple7);
     }
+    
+    /**
+     * set the nextState using the clock sequence
+     */
     public void decide(){
         int c = getSteps()- 8 * cicles;
         int x = positions.get(c)[0];
@@ -62,9 +77,11 @@ public class Mimo extends Cell
             cicles++;
         }
     }
+    
     public int neighborsActive(){
         return aManufacturing.neighborsActive(row,column);
     }
+    
     public boolean neighborIsEmpty (int dr,int dc){
         return aManufacturing.isEmpty(row+dr,column+dc);
     }

@@ -21,7 +21,11 @@ public class Kriptonita extends Artefact implements Thing {
     private int row,column;
 
     /**
-     * Constructor for objects of class Kriptonita
+     * Create a new Kriptonita (<b>row,column</b>) in the aManufactuing <b>ac</b>..
+     * @param am
+     * @param row
+     * @param column
+     * @param active
      */
     public Kriptonita(AManufacturing am,int row, int column, boolean active){
         aManufactuing=am;
@@ -33,27 +37,24 @@ public class Kriptonita extends Artefact implements Thing {
         color=Color.green;
         //positions = new ArrayList();
     }
-
+    
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y
+     * return row
      */
     public int getRow() {
         return row;
     }
-
+    
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y
+     * return column
      */
     public int getColumn() {
         return column;
     }
-
+    
+    /**
+     * return color 
+     */
     public final Color getColor(){
         return color;
     }
@@ -64,7 +65,11 @@ public class Kriptonita extends Artefact implements Thing {
         // }
         // positions.clear();
     // }
-
+    
+    /**
+     * change the actual state for the next state and incrase the steps
+     * decide if create new Kriptonita in the neihbours
+     */
     public void change() {
         step();
         for(int dr = -1; dr<2; dr++) {
@@ -78,7 +83,10 @@ public class Kriptonita extends Artefact implements Thing {
         }
         state=nextState;
     }
-
+    
+    /**
+     * decide the next state, if has neighbours actives then the next state is active, else inactive.
+     */
     public void decide() {
         nextState=(neighborsActive()>0 ? Artefact.ACTIVE:Artefact.INACTIVE);
     }
@@ -91,6 +99,9 @@ public class Kriptonita extends Artefact implements Thing {
         return aManufactuing.isEmpty(row+dr,column+dc);
     }
 
+    /**
+     * set the shape as round
+     */
     public int shape() {
         return ROUND;
     }

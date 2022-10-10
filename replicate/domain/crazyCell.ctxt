@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=crazyCell
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ crazyCell\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ crazy\ cell\ success\ the\ next\ conditions\:\r\n\ -\ change\ his\ color\ to\ a\ random\ color\ \r\n\ -\ tic\ tac\ then\ dissappear(if\ is\ active)\r\n\ -\ tic\ tac\ then\ appear(if\ is\ inactive)\r\n\ \r\n\ @author\ OlayaValencia\r\n\ @version\ 1.0\r\n
 comment1.params=am\ row\ column\ active
 comment1.target=crazyCell(AManufacturing,\ int,\ int,\ boolean)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ crazyCell\r\n
+comment1.text=\r\n\ Create\ a\ new\ crazy\ cell\ (<b>row,column</b>)\ in\ the\ aManufactuing\ <b>ac</b>..\r\n\ @param\ am\r\n\ @param\ row\r\n\ @param\ column\r\n\ @param\ active\r\n
 comment2.params=
 comment2.target=void\ fullerColor()
+comment2.text=\r\n\ initialize\ the\ random\ colors\ in\ a\ hashmap\r\n
 comment3.params=
 comment3.target=void\ decide()
+comment3.text=\r\n\ decide\ the\ next\ state\ with\ the\ conditions\ of\ color\ and\ state\r\n
 numComments=4
