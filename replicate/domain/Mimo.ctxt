@@ -1,12 +1,15 @@
 #BlueJ class context
 comment0.target=Mimo
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Mimo\ here.\r\n\ \r\n\ @author\ (Mateo\ Olaya\ -\ David\ Valencia)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ Mimo\ Cell\ copy\ the\ state\ of\ his\ neighbours\ in\ a\ clock\ sequence\r\n\ \r\n\ @author\ (Mateo\ Olaya\ -\ David\ Valencia)\ \r\n\ @version\ 1.0\r\n
 comment1.params=am\ row\ column\ active
 comment1.target=Mimo(AManufacturing,\ int,\ int,\ boolean)
+comment1.text=Create\ a\ new\ Mimo\ cell\ (<b>row,column</b>)\ in\ the\ aManufactuing\ <b>ac</b>..\r\n\ @param\ am\r\n\ @param\ row\r\n\ @param\ column\r\n\ @param\ active\r\n
 comment2.params=
 comment2.target=void\ fuller()
+comment2.text=\r\n\ This\ method\ inititalize\ the\ positions\ of\ the\ clock\ sequence\ in\ a\ HashMap\r\n
 comment3.params=
 comment3.target=void\ decide()
+comment3.text=\r\n\ set\ the\ nextState\ using\ the\ clock\ sequence\r\n
 comment4.params=
 comment4.target=int\ neighborsActive()
 comment5.params=dr\ dc

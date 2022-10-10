@@ -11,14 +11,17 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 public class Predator extends Artefact implements Thing {
-    // instance variables - replace the example below with your own
     protected char nextState;
     protected Color color;
     private AManufacturing aManufactuing;
     private int row,column;
 
     /**
-     * Constructor for objects of class Kriptonita
+     * Create a new Predator (<b>row,column</b>) in the aManufactuing <b>ac</b>..
+     * @param am
+     * @param row
+     * @param column
+     * @param active
      */
     public Predator(AManufacturing am,int row, int column, boolean active){
         aManufactuing=am;
@@ -32,20 +35,14 @@ public class Predator extends Artefact implements Thing {
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y
+     * return row
      */
     public int getRow() {
         return row;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y
+     * return column
      */
     public int getColumn() {
         return column;
@@ -55,6 +52,9 @@ public class Predator extends Artefact implements Thing {
         return color;
     }
     
+    /**
+     * change the state to the next state and incrase the steps
+     */
     public void change() {
         step();
         for(int dr = -1; dr<2; dr++) {
@@ -68,7 +68,10 @@ public class Predator extends Artefact implements Thing {
         }
         state=nextState;
     }
-
+    
+    /**
+     * decide the next state, if has neighbours actives then the next state is active, else inactive.
+     */
     public void decide() {
         nextState=(neighborsActive()>0 ? Artefact.ACTIVE:Artefact.INACTIVE);
     }
@@ -81,10 +84,16 @@ public class Predator extends Artefact implements Thing {
         return aManufactuing.isEmpty(row+dr,column+dc);
     }
     
+    /**
+     * return if a neighbor exist in aManufacturing
+     */
     public boolean neighborIsOccupied(int dr,int dc){
         return aManufactuing.isOccupied(row+dr,column+dc);
     }
     
+    /**
+     * set the shape as round 
+     */
     public int shape() {
         return ROUND;
     }
