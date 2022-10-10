@@ -48,4 +48,31 @@ public class UnitTest
         assertTrue(am1.getThing(2,3).isActive());
     }
     
+    @Test
+    public void shouldBeActiveKriptonite(){
+        AManufacturing am1 = new AManufacturing();
+        am1.ticTac();
+        am1.ticTac();
+        am1.ticTac();
+        am1.ticTac();
+        am1.ticTac();
+        assertTrue(am1.getThing(3,0).isActive());
+    }
+    @Test
+    public void shouldEat(){
+        AManufacturing am1 = new AManufacturing();
+        am1.ticTac();
+        am1.ticTac();
+        assertTrue(am1.getThing(2,2).isActive());
+    }
+    @Test
+    public void ShouldIncrease(){
+        AManufacturing am1 = new AManufacturing();
+        am1.ticTac();
+        am1.ticTac();
+        am1.ticTac();
+        int a = am1.neighborsActive(25, 24);
+        assertTrue(a >= 5);
+    }
+    
 }
